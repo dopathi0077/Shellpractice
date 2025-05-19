@@ -1,6 +1,6 @@
 #! /bin/bash
-PERSON1=Varun #there should be no space before or after variable 
-PERSON2=Sai
+PERSON1=$1#there should be no space before or after variable 
+PERSON2=$2
 
 echo "$PERSON1: Hey $PERSON2 How are you practicing Devops class"
 echo "$PERSON2: Iam doing good.How are you doing?"
