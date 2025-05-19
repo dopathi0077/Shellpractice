@@ -1,5 +1,5 @@
 #! /bin/bash
-PERSON1=$1#there should be no space before or after variable 
+PERSON1=$1 #there should be no space before or after variable 
 PERSON2=$2
 
 echo "$PERSON1: Hey $PERSON2 How are you practicing Devops class"
