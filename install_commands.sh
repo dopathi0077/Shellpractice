@@ -10,7 +10,7 @@ else
    echo "You are running with root access"
 fi
 
-dnf install nginxyx -y
+dnf install nginx -y
 
 if [ $? -eq 0 ]
 then 
