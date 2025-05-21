@@ -10,12 +10,25 @@ else
    echo "You are running with root access"
 fi
 
-dnf install nginx -y
-
-if [ $? -eq 0 ]
+dnf list installed nginx
+if [ $? -ne 0 ]
 then 
-  echo "installation of nginx is ... SUCCESS"
+  echo "installation is going to install now "
+  dnf install nginx -y
+  if [ $? -eq 0 ]
+  then 
+    echo "installation of nginx is ... SUCCESS"
+  else
+    echo "installation of nginx is ... FAILURE"
+    exit 1
+  fi
 else
-  echo "installation of nginx is ... FAILURE"
-  exit 1
-fi
+   echo "Nginx is already installed no changes to do !"
+fi 
+# dnf install nginx -y
+# if [ $? -eq 0 ]
+# then 
+#   echo "installation of nginx is ... SUCCESS"
+# else
+#   echo "installation of nginx is ... FAILURE"
+#   exit 1  
