@@ -17,4 +17,5 @@ then
   echo "installation of nginx is ... SUCCESS"
 else
   echo "installation of nginx is ... FAILURE"
+  exit 1
 fi
