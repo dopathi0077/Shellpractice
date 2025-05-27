@@ -39,9 +39,9 @@ if [ $? -ne 0 ] # takes input status and install the service
 then 
   echo "MySQL is not installed... going to install it"
   dnf install mysql -y
-  VALIDATE $? "msql"
+  VALIDATE $? "MySQL"
 else
-   echo -e "msql is already $Y installed no changes to do ! $N "
+   echo -e "$Y msql is already  installed no changes to do ! $N "
 fi 
 
 # dnf list installed mysql
