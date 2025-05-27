@@ -25,7 +25,7 @@ if [ $? -ne 0 ]
 then 
   echo "installation is going to install now "
   dnf install nginx -y
-  VALIDATE $1 "nginx"
+  VALIDATE $? "nginx"
 else
    echo "Nginx is already installed no changes to do !"
 fi 
@@ -35,7 +35,7 @@ if [ $? -ne 0 ]
 then 
   echo "installation is going to install now "
   dnf install msql -y
-  VALIDATE $1 "msql"
+  VALIDATE $? "msql"
 else
    echo "msql is already installed no changes to do !"
 fi 
