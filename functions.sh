@@ -11,7 +11,7 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 -eq 0 ]
+    if [ $1 -eq 0 ] # it will pass the exit status args VALIDATE $? "nginx" as $1 and $2 to this 
     then
       echo "Installing $2 is .... Succesfull"
     else
@@ -31,7 +31,7 @@ else
 fi 
 
 dnf list installed msql 
-if [ $? -ne 0 ]
+if [ $? -ne 0 ] # takes input status and install the service
 then 
   echo "MySQL is not installed... going to install it"
   dnf install mysql -y
