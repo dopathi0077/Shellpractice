@@ -34,15 +34,15 @@ else
    echo -e "Nginx is already $Y installed no changes to do $N !"
 fi 
 
-dnf list installed msql 
-if [ $? -ne 0 ] # takes input status and install the service
-then 
-  echo "MySQL is not installed... going to install it"
-  dnf install mysql -y
-  VALIDATE $? "MySQL"
+dnf list installed mysql
+if [ $? -ne 0 ]
+then
+    echo "MySQL is not installed... going to install it"
+    dnf install mysql -y
+    VALIDATE $? "MySQL"
 else
-   echo -e "$Y msql is already  installed no changes to do ! $N "
-fi 
+    echo -e "Nothing to do MySQL... $Y already installed $N"
+fi
 
 # dnf list installed mysql
 # if [ $? -ne 0 ]
