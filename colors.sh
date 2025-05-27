@@ -37,11 +37,11 @@ fi
 dnf list installed msql 
 if [ $? -ne 0 ] 
 then 
-  echo "MySQL is not installed... going to install it"
-  dnf install mysql -y
-  VALIDATE $? "MySQL"
+     echo "MySQL is not installed... going to install it"
+     dnf install mysql -y
+     VALIDATE $? "MySQL"
 else
-   echo -e "$Y msql is already  installed no changes to do ! $N "
+     echo -e "$Y msql is already  installed no changes to do ! $N "
 fi 
 
 
