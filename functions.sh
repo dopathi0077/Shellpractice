@@ -23,7 +23,7 @@ VALIDATE(){
 dnf list installed nginx 
 if [ $? -ne 0 ]
 then 
-  echo "installation is going to install now "
+  echo "nginx is going to install now "
   dnf install nginx -y
   VALIDATE $? "nginx"
 else
@@ -33,9 +33,19 @@ fi
 dnf list installed msql 
 if [ $? -ne 0 ]
 then 
-  echo "installation is going to install now "
-  dnf install msql -y
+  echo "MySQL is not installed... going to install it"
+  dnf install mysql -y
   VALIDATE $? "msql"
 else
    echo "msql is already installed no changes to do !"
 fi 
+
+# dnf list installed mysql
+# if [ $? -ne 0 ]
+# then
+#     echo "MySQL is not installed... going to install it"
+#     dnf install mysql -y
+#     VALIDATE $? "MySQL"
+# else
+#     echo "MySQL is already installed...Nothing to do"
+# fi
