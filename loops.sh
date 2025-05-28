@@ -43,4 +43,4 @@ do
   else
       echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
   fi
-
+done
