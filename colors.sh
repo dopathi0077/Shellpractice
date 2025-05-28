@@ -23,7 +23,7 @@ VALIDATE(){
       exit 1
     fi
 }
-
+ 
 dnf list installed nginx 
 if [ $? -ne 0 ]
 then 
