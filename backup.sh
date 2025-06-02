@@ -26,6 +26,17 @@ else
    echo "You are running with root access" | tee -a $LOG_FILE
 fi
 }
+
+VALIDATE(){
+    if [ $1 -eq 0 ] # it will pass the exit status args VALIDATE $? "nginx" as $1 and $2 to this 
+    then
+      echo -e "$2 is .... $G Succesfull $N" | tee -a $LOG_FILE
+    else
+      echo -e "$2 is .... $R Failure $N" | tee -a $LOG_FILE
+      exit 1
+    fi
+}
+
 check_root
 mkdir -p $LOGS_FOLDER
 
@@ -38,13 +49,14 @@ then
     USAGE
 fi
 
+if [ ! -d $SOURCE_DIR ]
+then
+    echo -e "$R Source Directory $SOURCE_DIR does not exist. Please check $N"
+    exit 1
+fi
 
-VALIDATE(){
-    if [ $1 -eq 0 ] # it will pass the exit status args VALIDATE $? "nginx" as $1 and $2 to this 
-    then
-      echo -e "$2 is .... $G Succesfull $N" | tee -a $LOG_FILE
-    else
-      echo -e "$2 is .... $R Failure $N" | tee -a $LOG_FILE
-      exit 1
-    fi
-}
+if [ ! -d $DEST_DIR ]
+then
+    echo -e "$R Destination Directory $DEST_DIR does not exist. Please check $N"
+    exit 1
+fi
