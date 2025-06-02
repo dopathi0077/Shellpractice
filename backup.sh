@@ -67,5 +67,5 @@ if [ ! -z FILES ]
 then 
     echo "files found"
 else
-    echo "no files found to dispaly"
+     echo -e "No log files found older than 14 days ... $Y SKIPPING $N"
 fi
