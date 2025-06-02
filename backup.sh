@@ -33,6 +33,12 @@ USAGE(){
     echo -e "$R USAGE: $N sh backup.sh <source-dir> <destination-dir> <days(optional)>"
 }
 
+if [ $# -lt 2 ]
+then
+    USAGE
+fi
+
+
 VALIDATE(){
     if [ $1 -eq 0 ] # it will pass the exit status args VALIDATE $? "nginx" as $1 and $2 to this 
     then
