@@ -67,6 +67,22 @@ then
     TIMESTAMP=$(date +%F-%H-%M-%S)
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+
+    if [ -f $ZIP_FILE ]
+    then
+        echo -e "Successfully created Zip file"
+    while IFS= read -r filepath
+    do
+        echo "Deleting file: $filepath" | tee -a $LOG_FILE
+        rm -rf $filepath
+    done <<< $FILES_TO_DELETE
+    echo -e " files older than $DAYS are deleted $G succesfully $N" 
+    
+    else
+        echo -e "Zip file creation $R failure $N"
+        exit 1
+    fi 
+
 else
     echo -e "No log files found older than 14 days ... $Y SKIPPING $N"
 fi
