@@ -60,3 +60,12 @@ then
     echo -e "$R Destination Directory $DEST_DIR does not exist. Please check $N"
     exit 1
 fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+
+if [ ! -z FILES ]
+then 
+    echo "files found"
+else
+    echo "no files found to dispaly"
+fi
