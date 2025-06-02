@@ -32,8 +32,8 @@ VALIDATE(){
       exit 1
     fi
 }
-# for package in ${PACKAGES[@]}
-for package in $@
+for package in ${PACKAGES[@]}
+# for package in $@ -- to run by using arguments from command line
 do 
   dnf list installed $PACKAGES &>>$LOG_FILE
   if [ $? -ne 0 ]
